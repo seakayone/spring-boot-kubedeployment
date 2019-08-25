@@ -23,7 +23,7 @@ public class HomeController {
 
   @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
   public Mono<TimeVersionAndHostName> home() {
-    return Mono.fromCallable(TimeVersionAndHostName::new);
+    return Mono.fromSupplier(TimeVersionAndHostName::new);
   }
 
   @Value
