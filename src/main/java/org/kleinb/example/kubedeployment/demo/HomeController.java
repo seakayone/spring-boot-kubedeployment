@@ -36,4 +36,3 @@ public class HomeController {
     private final Instant buildtime = buildProperties.getTime();
   }
 }
-
