@@ -19,10 +19,18 @@ configurations {
 repositories {
 	mavenCentral()
 }
-
+ext {
+	lombokVersion = '1.18.8'
+	vavrVersion = '0.10.0'
+}
 dependencies {
+	compileOnly "org.projectlombok:lombok:$lombokVersion"
+	annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+	implementation "io.vavr:vavr:$vavrVersion"
+	implementation "io.vavr:vavr-jackson:$vavrVersion"
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-json'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

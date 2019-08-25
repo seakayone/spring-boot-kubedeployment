@@ -3,6 +3,7 @@ package org.kleinb.example.kubedeployment.demo;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.time.Instant;
+import lombok.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,18 +16,11 @@ public class HomeController {
   }
 }
 
+@Value
 class TimeAndHostName {
 
   private final Instant now = Instant.now();
   private final String hostname = hostname();
-
-  public Instant getNow() {
-    return now;
-  }
-
-  public String getHostname() {
-    return hostname;
-  }
 
   private static String hostname() {
     try {
