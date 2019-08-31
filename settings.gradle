@@ -1,5 +1,3 @@
-
-
 buildscript {
     repositories {
         gradlePluginPortal()
@@ -10,9 +8,20 @@ buildscript {
 }
 apply plugin: 'org.kordamp.gradle.settings'
 
+// In general the projects layout looks like this:
+//.
+//├── build.gradle
+//├── settings.gradle
+//├── docs
+//│ └── guide
+//│     └── guide.gradle
+//└── subprojects
+//  ├── project1
+//  │   └── project1.gradle
+//  └── project2
+//      └── project2.gradle
+// See also https://aalmiray.github.io/kordamp-gradle-plugins/#_org_kordamp_gradle_settings
+
 projects {
-    layout = 'multi-level'
-    directories = [
-            'subprojects/backend'
-    ]
+    directories = ['docs', 'subprojects']
 }
