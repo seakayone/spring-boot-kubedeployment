@@ -11,5 +11,3 @@ Used technologies:
 * Some kordamp gradle plugins for ease of handling multiproject builds and documentation
 * The gradle plugin jib as the docker image build tool
 * Command line tool skaffold as the glue to deploy the docker container to a local kubernetes cluster
-
-
