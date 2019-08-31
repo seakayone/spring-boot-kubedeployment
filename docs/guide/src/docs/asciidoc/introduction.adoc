@@ -6,10 +6,10 @@ Sample project demonstrating how local development with a local Kubernetes clust
 
 Used technologies:
 
-* Spring Boot for the `backend` project server implementation.
-* Gradle as the build tool.
-* Some kordamp gradle plugins for ease of handling multiproject builds and documentation.
-* The gradle plugin jib as the docker image build tool.
-* Command line tool skaffold as the glue to deploy the docker container to a local kubernetes cluster.
+* Spring Boot for the `backend` project server implementation
+* Gradle as the build tool
+* Some kordamp gradle plugins for ease of handling multiproject builds and documentation
+* The gradle plugin jib as the docker image build tool
+* Command line tool skaffold as the glue to deploy the docker container to a local kubernetes cluster
 
 

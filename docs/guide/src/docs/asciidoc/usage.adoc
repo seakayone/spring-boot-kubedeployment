@@ -1,0 +1,10 @@
+
+[[_usage]]
+= Usage
+
+Starting up `skaffold` so it is watching changes in the project and its updating local kubernetes cluster deployment.
+
+[source,bash]
+----
+skaffold dev --trigger notify
+----
