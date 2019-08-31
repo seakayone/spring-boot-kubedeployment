@@ -4,8 +4,9 @@ build:
   local:
     push: false
   artifacts:
-    - image: demo
-      jibGradle: {}
+    - image: backend
+      jibGradle:
+        project: backend
 deploy:
   kubectl:
     manifests:

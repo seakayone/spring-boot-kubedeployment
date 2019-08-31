@@ -1,43 +1,7 @@
-plugins {
-    id 'org.springframework.boot' version '2.1.7.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-    id 'java'
-    id 'com.google.cloud.tools.jib' version '1.5.0'
-}
-
-group = 'org.kleinb.example.kubedeployment'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_11
-
-configurations {
-    developmentOnly
-    runtimeClasspath {
-        extendsFrom developmentOnly
+allprojects {
+    repositories {
+        jcenter()
     }
 }
 
-repositories {
-    mavenCentral()
-}
-
-ext {
-    lombokVersion = '1.18.8'
-}
-
-springBoot {
-    buildInfo()
-}
-
-dependencies {
-    compileOnly "org.projectlombok:lombok:$lombokVersion"
-    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
-    implementation 'io.vavr:vavr:0.10.1'
-    implementation 'io.vavr:vavr-jackson:0.10.0'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-webflux'
-    implementation 'org.springframework.boot:spring-boot-starter-json'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-wrapper.gradleVersion = '5.6'
+wrapper.gradleVersion = '5.6.1'

@@ -1,1 +1,18 @@
-rootProject.name = 'demo'
+
+
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'org.kordamp.gradle:settings-gradle-plugin:0.26.0'
+    }
+}
+apply plugin: 'org.kordamp.gradle.settings'
+
+projects {
+    layout = 'multi-level'
+    directories = [
+            'subprojects/backend'
+    ]
+}
