@@ -11,14 +11,14 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
-      app: spring-boot-jib
+      app: spring-backend
   template:
     metadata:
       labels:
-        app: spring-boot-jib
+        app: spring-backend
     spec:
       containers:
-        - name: spring-boot-jib-pod
+        - name: spring-backend-pod
           image: backend
           imagePullPolicy: IfNotPresent
           ports:
@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-boot-jib-service
+  name: spring-backend-service
 spec:
   type: LoadBalancer
   ports:
@@ -41,4 +41,4 @@ spec:
       port: 8080
       targetPort: 8080
   selector:
-    app: spring-boot-jib
+    app: spring-backend
