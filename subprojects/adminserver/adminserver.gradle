@@ -18,7 +18,7 @@ configurations {
 
 springBoot {
     buildInfo()
-    mainClassName = 'org.kleinb.example.kubedeployment.demo.DemoApplication'
+    mainClassName = 'org.kleinb.example.kubedeployment.adminserver.AdminserverApplication'
 }
 
 dependencies {

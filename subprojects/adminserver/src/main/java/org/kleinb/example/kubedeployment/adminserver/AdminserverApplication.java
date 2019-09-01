@@ -1,4 +1,4 @@
-package org.kleinb.example.kubedeployment.demo;
+package org.kleinb.example.kubedeployment.adminserver;
 
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableAutoConfiguration
 @EnableAdminServer
-public class AdminServerApplication {
+public class AdminserverApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(AdminServerApplication.class, args);
+    SpringApplication.run(AdminserverApplication.class, args);
   }
 }

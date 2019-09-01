@@ -1,4 +1,4 @@
-package org.kleinb.example.kubedeployment.demo;
+package org.kleinb.example.kubedeployment.backend;
 
 import static java.time.Instant.now;
 

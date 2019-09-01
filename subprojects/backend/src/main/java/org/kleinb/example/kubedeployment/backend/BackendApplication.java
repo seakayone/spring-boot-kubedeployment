@@ -1,16 +1,15 @@
-package org.kleinb.example.kubedeployment.demo;
+package org.kleinb.example.kubedeployment.backend;
 
 import io.vavr.jackson.datatype.VavrModule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.info.BuildProperties;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class DemoApplication {
+public class BackendApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(DemoApplication.class, args);
+    SpringApplication.run(BackendApplication.class, args);
   }
 
   @Bean
