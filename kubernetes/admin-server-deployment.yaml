@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deployment
+  name: admin-server
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -11,34 +11,34 @@ spec:
       maxUnavailable: 0
   selector:
     matchLabels:
-      app: spring-boot-jib
+      app: spring-admin-server
   template:
     metadata:
       labels:
-        app: spring-boot-jib
+        app: spring-admin-server
     spec:
       containers:
-        - name: spring-boot-jib-pod
-          image: backend
+        - name: spring-admin-server-pod
+          image: admin-server
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 9090
           readinessProbe:
             tcpSocket:
-              port: 8080
+              port: 9090
             initialDelaySeconds: 5
             periodSeconds: 10
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-boot-jib-service
+  name: spring-admin-server-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 9090
+      nodePort: 32323
   selector:
-    app: spring-boot-jib
+    app: spring-admin-server
